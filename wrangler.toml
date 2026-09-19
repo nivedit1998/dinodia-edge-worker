@@ -1,0 +1,19 @@
+name = "dinodia-api-router"
+main = "src/index.ts"
+compatibility_date = "2026-02-05"
+
+routes = [
+  { pattern = "app.dinodiasmartliving.com/api/*", zone_name = "dinodiasmartliving.com" }
+]
+
+[vars]
+AWS_API_ORIGIN = "https://api-origin.dinodiasmartliving.com"
+VERCEL_APP_ORIGIN = "https://dinodia-platform.vercel.app"
+DEFAULT_BACKEND = "vercel"
+ENABLE_AWS_CANARY = "false"
+CANARY_IPS = ""
+CRON_TARGET_URL = "https://app.dinodiasmartliving.com/api/cron/monitoring-snapshot"
+HUB_AVAILABILITY_CRON_TARGET_URL = "https://app.dinodiasmartliving.com/api/cron/hub-availability"
+
+[triggers]
+crons = ["0 */2 * * *", "*/15 * * * *"]
